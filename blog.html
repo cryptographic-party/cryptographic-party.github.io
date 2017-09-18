@@ -1,0 +1,19 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h3>
+          {{ post.title | escape }}
+          <small>{{ post.date | date: date_format }}</small>
+        </h3>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

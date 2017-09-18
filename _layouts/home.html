@@ -2,25 +2,66 @@
 layout: default
 ---
 
-<div class="home">
+{% include jumbotron.html %}
 
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
+<div class="container">
+  <h1>VPN <small class="text-muted">encrypting your network traffic</small></h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+  <h3>What is a VPN?</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum velit facilis nemo nostrum provident voluptatibus eius natus deleniti rerum exercitationem, cum perspiciatis dolores, est a vitae. Nam, quasi vero?</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <h3>What should I look for when choosing a VPN provider?</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <h3>Which VPN providers do you recommend?</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pricing</th>
+        <th>Accepts Bitcoin</th>
+        <th>Accepts Monero</th>
+        <th>Location</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign sortedProviders = site.data.vpn | sort: 'name' %}
+      {% for provider in sortedProviders %}
+        <tr>
+          <td>{{ provider.name }}</td>
+          <td>{{ provider.pricing }}</td>
 
+          {% if provider.bitcoin %}
+            <td><span class="badge badge-success">Yes</span></td>
+          {% else %}
+            <td><span class="badge badge-danger">No</span></td>
+          {% endif %}
+
+          {% if provider.monero %}
+            <td><span class="badge badge-success">Yes</span></td>
+          {% else %}
+            <td><span class="badge badge-danger">No</span></td>
+          {% endif %}
+
+          <td>{{ provider.location }}</td>
+          <td><a href="{{ provider.website }}">{{ provider.website }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <hr>
+</div>
+
+<div class="container">
+  <h1>Cryptocurrency <small class="text-muted">securing your finances</small></h1>
+  <h3>What is cryptocurrency?</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
+
+  <h3>Which cryptocurrency should I use?</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
+
+  <h3>How can I obtain cryptocurrency?</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
 </div>
