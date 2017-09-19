@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pricing</th>
+      <th>Accepts Bitcoin</th>
+      <th>Accepts Monero</th>
+      <th>Location</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign sortedProviders = site.data.email | sort: 'name' %}
+    {% for provider in sortedProviders %}
+      <tr>
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.pricing }}</td>
+
+        {% if provider.bitcoin %}
+          <td><span class="badge badge-success">Yes</span></td>
+        {% else %}
+          <td><span class="badge badge-danger">No</span></td>
+        {% endif %}
+
+        {% if provider.monero %}
+          <td><span class="badge badge-success">Yes</span></td>
+        {% else %}
+          <td><span class="badge badge-danger">No</span></td>
+        {% endif %}
+
+        <td>{{ provider.location }}</td>
+        <td><a href="{{ provider.website }}">{{ provider.website }}</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

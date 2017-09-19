@@ -14,42 +14,7 @@ layout: default
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
 
   <h3>Which VPN providers do you recommend?</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Pricing</th>
-        <th>Accepts Bitcoin</th>
-        <th>Accepts Monero</th>
-        <th>Location</th>
-        <th>Website</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% assign sortedProviders = site.data.vpn | sort: 'name' %}
-      {% for provider in sortedProviders %}
-        <tr>
-          <td>{{ provider.name }}</td>
-          <td>{{ provider.pricing }}</td>
-
-          {% if provider.bitcoin %}
-            <td><span class="badge badge-success">Yes</span></td>
-          {% else %}
-            <td><span class="badge badge-danger">No</span></td>
-          {% endif %}
-
-          {% if provider.monero %}
-            <td><span class="badge badge-success">Yes</span></td>
-          {% else %}
-            <td><span class="badge badge-danger">No</span></td>
-          {% endif %}
-
-          <td>{{ provider.location }}</td>
-          <td><a href="{{ provider.website }}">{{ provider.website }}</a></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  {% include tables/vpn.html %}
 
   <hr>
 </div>
@@ -61,42 +26,7 @@ layout: default
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat provident id enim sit at, animi minima in nesciunt quam nostrum perspiciatis temporibus. Tenetur id voluptatem dolorem est quam magnam?</p>
 
   <h3>Which VPN providers do you recommend?</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Pricing</th>
-        <th>Accepts Bitcoin</th>
-        <th>Accepts Monero</th>
-        <th>Location</th>
-        <th>Website</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% assign sortedProviders = site.data.email | sort: 'name' %}
-      {% for provider in sortedProviders %}
-        <tr>
-          <td>{{ provider.name }}</td>
-          <td>{{ provider.pricing }}</td>
-
-          {% if provider.bitcoin %}
-            <td><span class="badge badge-success">Yes</span></td>
-          {% else %}
-            <td><span class="badge badge-danger">No</span></td>
-          {% endif %}
-
-          {% if provider.monero %}
-            <td><span class="badge badge-success">Yes</span></td>
-          {% else %}
-            <td><span class="badge badge-danger">No</span></td>
-          {% endif %}
-
-          <td>{{ provider.location }}</td>
-          <td><a href="{{ provider.website }}">{{ provider.website }}</a></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  {%include tables/email.html %}
 
   <hr>
 </div>
