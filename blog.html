@@ -4,16 +4,13 @@ title: Blog
 permalink: /blog/
 ---
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        <h3>
-          {{ post.title | escape }}
-          <small>{{ post.date | date: date_format }}</small>
-        </h3>
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">{{ post.title | escape }} <small class="text-muted">{{ post.date | date: date_format }}</small></h4>
+      <p class="card-text">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+      <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary">Read more</a>
+    </div>
+  </div>
+{% endfor %} 
