@@ -25,3 +25,19 @@ Keep your password database backed up on a USB flash drive (or a cloud storage s
 ## How do I know if I have a good password?
 
 Make sure that your password isn't in a list such as [the 10000 most common passwords](https://github.com/danielmiessler/SecLists/blob/master/Passwords/10k_most_common.txt). Alternatively use a service such as [How Secure Is My Password](https://howsecureismypassword.net/).
+
+## Give me some examples
+
+#### Good Passwords
+
+(don't actually use these, they're examples)
+
+* `JR=w-.ZVx'=7}Ey?`
+* `ny5^k6E+LaCFBsgk+w`
+* `d!EsnavFK22E-+DzG7`
+
+#### Bad Passwords
+
+* `iphone777`
+* `formula1fan`
+* `SootyIsTheBest`
