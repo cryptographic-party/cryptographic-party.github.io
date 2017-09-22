@@ -1,0 +1,19 @@
+exchanges:
+  - name: Bittylicious
+    personal: false
+    bitcoin: true
+    monero: false
+    location: United Kingdom
+    website: https://bittylicious.com
+  - name: LocalBitcoins
+    personal: false
+    bitcoin: true
+    monero: false
+    location: Finland
+    website: https://localbitcoins.com
+  - name: LocalMonero
+    personal: false
+    bitcoin: false
+    monero: true
+    location: Hong Kong
+    website: https://localmonero.co
