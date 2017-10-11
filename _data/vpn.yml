@@ -1,3 +1,9 @@
+- name: AirVPN
+  website: https://airvpn.org
+  bitcoin: true
+  monero: false
+  location: Italy
+  pricing: €7/month
 - name: CloakVPN
   website: https://cloakvpn.com
   bitcoin: false
